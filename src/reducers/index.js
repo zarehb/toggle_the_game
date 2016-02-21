@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import lamps from './Lamps'
-import activeLevel from './ActiveLevel'
+import activeLevel from './ActiveLevel';
+import playMode from './PlayMode';
 
 const rootReducer = combineReducers({
-  lamps, activeLevel
+   activeLevel, playMode
 });
 
 export default rootReducer;
