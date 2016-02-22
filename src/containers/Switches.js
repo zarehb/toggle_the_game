@@ -28,7 +28,6 @@ class Switches extends Component {
     
     render() {
         return (<div>
-                Switches
                 <ul>
                     {this.addSwitches.bind(this)()}
                 </ul><

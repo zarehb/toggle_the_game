@@ -17,7 +17,7 @@ class Switch extends Component {
         let mode = this.props.playMode;
         
         if(this.props.playMode) this.props.switchUpdated({key,value,mode});
-        else onMouseDown();
+        //else this.onMouseDown();
           
     }
     
@@ -44,8 +44,9 @@ class Switch extends Component {
     
     render() {
         
-        return (<div>
-                    <button onClick={this.trigger.bind(this)} onMouseUp={this.onMouseUp.bind(this)} onMouseDown={this.onMouseDown.bind(this)} >{this.props.on ? "Turn on": "Turn off"}</button>
+        return (<div onClick={this.trigger.bind(this)} onMouseUp={this.onMouseUp.bind(this)} onMouseDown={this.onMouseDown.bind(this)} 
+        className={this.props.on ? 'switch wire on' : ' switch wire off' } >         
+                    {this.props.on ? "on": "off"}
                 </div>);
     }
 }

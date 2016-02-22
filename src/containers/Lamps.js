@@ -4,7 +4,10 @@ import React from 'react';
 export default class Lamps extends Component {
     addLamps() {
         console.log("add lamp")
-        return _.range(this.props.count).map((itm,index) => { return (<li className={ this.props.result[index] == '1' ? 'on' : 'off'} key={index} ><span>Lamp</span></li>) } );    
+        return _.range(this.props.count).map((itm,index) => { 
+            return (<li className={ this.props.result[index] == '1' ? 'lamp on' : 'lamp off'} key={index} >
+                    
+                    </li>) } );    
     }
     
     render() {

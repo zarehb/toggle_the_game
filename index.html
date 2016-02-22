@@ -1,7 +1,7 @@
 <!----
 @author Zareh Boghozian zareh.b@gmail.com
 for Koding hackathon
-Switches puzzle game
+Lamps puzzle game
 Game idea and implementation by Zareh B
 -->
 
@@ -9,7 +9,7 @@ Game idea and implementation by Zareh B
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Switches</title>
+<title>Lamps</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="//koding.com/hello/css/style.css">
 <!--[if IE]>
@@ -18,17 +18,155 @@ Game idea and implementation by Zareh B
 <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+<link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body class="html">
 <style>
+
+.wire {
+    font-family: 'Wire One', sans-serif;
+}
+.sans {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background: linear-gradient(to left,#595959 0,#000 10%,#000 90%,#595959 100% );
+    color: #ecf0f1;
+    
+    
+}
+
+#light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: white;
+    z-index: 10;
+    transition: all 0.5s 1s;
+    pointer-events: none;
+}
+
+body.complete #light {
+   opacity: 1;
+   display: block;
+}
+
+body.complete {
+   
+}
+.container {
+    margin: 0px auto;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+.start-screen {
+    background: url("https://farm9.staticflickr.com/8372/8551544973_0ea0ee4670_z_d.jpg") no-repeat 47% 0px;
+    height: 500px;
+    
+}
+.customBtn {
+    width: 100px;
+    display: inline-block;
+    background-color: black;
+    color: #ecf0f1;
+    border: 1px solid #ecf0f1;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.customBtn:hover {
+    text-decoration: normal;
+    color: #ecf0f1;
+    
+    background-color: #2c3e50;
+
+}
+
+.start-screen .customBtn {
+    position: absolute;
+    
+    top: 400px;
+    left: calc(50% - 60px);
+}
+
+
+h2 {
+        font-size: 15px;
+        color: #95a5a6;
+        position: relative;
+        top: -30px;
+        margin: 0;
+    }
+    
+    h3 {
+        font-size: 20px;
+        position: relative;
+        top: -10px;
+        margin: 0;
+    }
+    
+h1.title {
+    font-style: normal;
+    letter-spacing: 20px;
+    font-size: 130px;
+    
+}
+
+ol.help {
+    width: 491px;
+    margin: 50px auto;
+    text-align: left;
+    font-size: 16px;
+    color: #7f8c8d;
+}
     .on {
         background-color: orange;
     }
+    ul {
+        list-style: none;
+    }
+    .lamp {
+        background: url(https://lh4.googleusercontent.com/-katLGTSCm2Q/UJC0_N7XCrI/AAAAAAAABq0/6GxNfNW-Ra4/s300/lightbulb.png) 100% 0 ;
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+    }
+    .switch {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        border: 1px solid #ecf0f1;
+        cursor: pointer;
+        font-size: 25px;
+        display: inline-block;
+        margin: 20px;
+        line-height: 67px;
+    }
+    .switch.on {
+        background: #ecf0f1;
+        color: black;
+        
+    }
+    
+    ul,ol {
+        padding: 0;
+    }
+    .lamp.on {
+        background-position: 0 0 !important;
+    }
 </style>
-
-<div id="container"></div>
+<div id="light"></div>
+<h1 class="wire title">LAMPS</h1>
+<h2>By Zareh Boghozian</h2>
+<div class="container sans" id="container"></div>
 <script src="bundle.js"></script>
 </body>
 </html>
