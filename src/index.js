@@ -1,3 +1,8 @@
+/*
+Author Zareh Boghozian 2016
+zareh.b@gmail.com
+*/
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
